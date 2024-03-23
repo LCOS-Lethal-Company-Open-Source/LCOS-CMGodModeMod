@@ -1,8 +1,8 @@
 {
-    "name": "God Mode Mod",
-    "version_number": "1.2.0",
-    "website_url": "https://github.com/LCOS-Lethal-Company-Open-Source/LCOS-Mods",
-    "description": "This mod adds in God Mode abilities to the game. This includes infinte sprinting, higher jumping, infinite number of days to the deadline, ultimited starting credit, and unlimited health.",
+    "name": "God_Mode_Mod",
+    "version_number": "0.0.1",
+    "website_url": "https://github.com/LCOS-Lethal-Company-Open-Source/LCOS-CMGodModeMod",
+    "description": "This mod adds in God Mode abilities to the game. This includes infinte sprinting, infinite days left till deadline, and a high amount of starting credits.",
     "dependencies": [
         "BepInEx-BepInExPack-5.4.2100"
     ]

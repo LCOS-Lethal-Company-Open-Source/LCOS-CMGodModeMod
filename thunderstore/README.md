@@ -6,7 +6,6 @@ This mod adds God Mode features to the game. These features include:
 - unlimited amount of starting credits
 - infinite sprint
 - higher jumping
-- invincibility
 
 This mod is still a work-in-progress mod!
 
