@@ -1,1 +1,0 @@
-# LCOS-ModTemplate
