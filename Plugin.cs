@@ -17,7 +17,7 @@ namespace CMGodModeMod
     {
         private const string modGUID = "Christianm.CMGodModeMod";
         private const string modName = "God Mode Mod";
-        private const string modVersion = "1.2.0.0";
+        private const string modVersion = "1.3.0.0";
 
         Harmony harmony = new Harmony(modGUID);
 
@@ -27,11 +27,16 @@ namespace CMGodModeMod
         {
             mls = BepInEx.Logging.Logger.CreateLogSource(modGUID);
 
-            mls.LogInfo("GOD MOD IS ACTIVE!"); //Displays in console
+            mls.LogInfo("GOD MOD IS ACTIVE!"); //Displays in console whatever is typed in the LogInfo parenthesis.
 
             harmony.PatchAll(typeof(GodModeModBase)); //Patch main class
+            mls.LogInfo("Successfully Patched Main Class.");
+
             harmony.PatchAll(typeof(PlayerControllerBPatch)); //Patch infinite sprint and change jump height
+            mls.LogInfo("Successfully Patched Player Movement.");
+
             harmony.PatchAll(typeof(infiniteTimeToDeadline)); //Patch the quota variables
+            mls.LogInfo("Successfully Patched Quota Variables.");
         }
 
         [HarmonyPatch(typeof(TimeOfDay), "Awake")]
@@ -40,13 +45,12 @@ namespace CMGodModeMod
         {
             private static void Postfix(ref TimeOfDay __instance)
             {
-                int StartingCredits = 10000;
-                int DaysLeft = 1000;
+                int StartingCredits = 9999;
+                int DaysLeft = 9999;
 
-                __instance.quotaVariables.startingCredits = StartingCredits; //Start with 10000 credits
-                __instance.quotaVariables.deadlineDaysAmount = DaysLeft; //Have 1000 days remaining before quota is due
+                __instance.quotaVariables.startingCredits = StartingCredits; //Start with 9999 credits
+                __instance.quotaVariables.deadlineDaysAmount = DaysLeft; //Have 9999 days remaining before quota is due
             }
         }
-
     }
 }

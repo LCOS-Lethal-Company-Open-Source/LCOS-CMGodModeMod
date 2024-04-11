@@ -14,20 +14,34 @@ namespace CMGodModeMod.Patches
     {
         [HarmonyPatch("Update")]
         [HarmonyPostfix]
-        
+        static void increaseMovementSpeed(ref float ___movementSpeed)
+        {
+            ___movementSpeed = 10f; //Increase the movement speed of the player.
+        }
+
+
+        [HarmonyPatch("Update")]
+        [HarmonyPostfix]
+
         static void infiniteSprintPatch(ref float ___sprintMeter)
         {
             ___sprintMeter = 1f; //Keep the sprint meter full at every tick so that the player can sprint infinitely without stopping
         }
 
+        [HarmonyPatch("Update")]
+        [HarmonyPostfix]
+
         static void increasedJumpForcePatch(ref float ___jumpForce)
         {
-            ___jumpForce = 0.01f; //Change the force of each jump.
+            ___jumpForce = 15f; //Change the height and duration of each jump.
         }
+
+        [HarmonyPatch("Update")]
+        [HarmonyPostfix]
 
         static void fullHealthPatch(ref int ___health)
         {
-            ___health = 100; //Keep health at 100 at every tick.
+            ___health = 1000000000; //Set health to 1000000000 so that the player never dies
         }
     }
 }
