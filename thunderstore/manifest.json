@@ -1,6 +1,6 @@
 {
     "name": "God_Mode_Mod",
-    "version_number": "0.0.2",
+    "version_number": "0.0.3",
     "website_url": "https://github.com/LCOS-Lethal-Company-Open-Source/LCOS-CMGodModeMod",
     "description": "This mod adds in God Mode abilities to the game. This includes major increases in movement speed, health, jumping, and starting credits. It also includes an infinite number of days to meet the quota and infinite sprint.",
     "dependencies": [

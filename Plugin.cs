@@ -17,7 +17,7 @@ namespace CMGodModeMod
     {
         private const string modGUID = "Christianm.CMGodModeMod";
         private const string modName = "God Mode Mod";
-        private const string modVersion = "1.3.0.0";
+        private const string modVersion = "1.4.0.0";
 
         Harmony harmony = new Harmony(modGUID);
 
@@ -45,10 +45,10 @@ namespace CMGodModeMod
         {
             private static void Postfix(ref TimeOfDay __instance)
             {
-                int StartingCredits = 9999;
+                int StartingCredits = 99999;
                 int DaysLeft = 9999;
 
-                __instance.quotaVariables.startingCredits = StartingCredits; //Start with 9999 credits
+                __instance.quotaVariables.startingCredits = StartingCredits; //Start with 99999 credits
                 __instance.quotaVariables.deadlineDaysAmount = DaysLeft; //Have 9999 days remaining before quota is due
             }
         }
