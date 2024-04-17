@@ -16,7 +16,10 @@ namespace CMGodModeMod.Patches
         [HarmonyPostfix]
         static void increaseMovementSpeed(ref float ___movementSpeed)
         {
-            ___movementSpeed = 10f; //Increase the movement speed of the player.
+            if (GameNetworkManager.Instance.isHostingGame) //Checks to make sure user is hosting the game.
+            {
+                ___movementSpeed = 10f; //Increase the movement speed of the player.
+            }
         }
 
 
@@ -25,7 +28,10 @@ namespace CMGodModeMod.Patches
 
         static void infiniteSprintPatch(ref float ___sprintMeter)
         {
-            ___sprintMeter = 1f; //Keep the sprint meter full at every tick so that the player can sprint infinitely without stopping
+            if (GameNetworkManager.Instance.isHostingGame) //Checks to make sure user is hosting the game.
+            {
+                ___sprintMeter = 1f; //Keep the sprint meter full at every tick so that the player can sprint infinitely without stopping
+            }
         }
 
         [HarmonyPatch("Update")]
@@ -33,7 +39,10 @@ namespace CMGodModeMod.Patches
 
         static void increasedJumpForcePatch(ref float ___jumpForce)
         {
-            ___jumpForce = 15f; //Change the height and duration of each jump.
+            if (GameNetworkManager.Instance.isHostingGame) //Checks to make sure user is hosting the game.
+            {
+                ___jumpForce = 15f; //Change the height and duration of each jump.
+            }
         }
 
         [HarmonyPatch("Update")]
@@ -41,7 +50,10 @@ namespace CMGodModeMod.Patches
 
         static void fullHealthPatch(ref int ___health)
         {
-            ___health = 1000000000; //Set health to 1000000000 so that the player never dies
+            if (GameNetworkManager.Instance.isHostingGame) //Checks to make sure user is hosting the game.
+            {
+                ___health = 1000000000; //Set health to 1000000000 so that the player never dies
+            }
         }
     }
 }
